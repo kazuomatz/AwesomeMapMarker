@@ -10,54 +10,57 @@ module AwesomeMapMarker
     p 'Hello'
   end
 
+  def self.generate(size: 128,fill_color:'#000000')
+    MiniMagick::Tool::Convert.new do |magick|
+      magick << File.expand_path("./app/assets/images/icon-base.png")
+      magick.resize("#{size}x#{size}")
+      magick.fuzz '100%'
+      magick.fill fill_color
+      magick.opaque '#0000FF'
+      magick << "/Users/kazuo-mt/Desktop/icon.png"
+    end
+  end
+
+
   class PingConverter
 
-    def initialize(size: 128, type: "far", fill_color:'#000000',threshold: 0.01)
+    def initialize(size: 128, fill_color:'#000000',threshold: 0.01)
       @width = size
       @height = size
       @font_size = (size * 0.76).ceil
-      @font_path = self.font_path()
-      @char_position = { x: @width * 0.53, y: (@font_size + @height) * 0.45 }
+      @char_position = { x: 0, y: (size / 12.8) * -1 }
       @threshold = threshold
       @fill_color = fill_color
+      MiniMagick.logger.level = Logger::DEBUG
     end
 
-
-    def draw_char(draw, image, char, char_position = @char_position)
-      draw.font = @font_path
-      draw.fill = '#ffffff'
-      draw.gravity = Magick::CenterGravity
-      draw.stroke = 'transparent'
-      draw.pointsize = @font_size
-      draw.text_antialias = true
-      draw.kerning = 0
-      draw.text_align(Magick::CenterAlign)
-      draw.text(char_position[:x], char_position[:y], char)
-      draw.draw(image)
-    end
-
-
-    def generate(name)
-      icon_data = icon_data(name)
+    def generate(type, name)
+      icon_data = icon_data(type, name)
       if icon_data
-        unicode = icon_data['unicode']
+        unicode = icon_data[:unicode]
         char = [Integer("0x#{unicode}")].pack('U*')
-        image = Magick::Image.new(@width, @height)
-        image = image.matte_replace(0, 0)
-        draw_char(draw, image, char)
+        image = MiniMagick::Image.open(File.expand_path("./app/assets/images/base.png"))
+        image.combine_options do |config|
+          config.resize "#{@width}x#{@height}"
+          config.font PingConverter.font_path(type)
+          config.gravity 'center'
+          config.pointsize @font_size
+          config.kerning  0
+          config.fill '#ffffff'
+          config.draw "text #{@char_position[:x]},#{@char_position[:y]} #{char}"
+        end
         return image
       else
         return nil
       end
-
     end
 
-    def icon_data(name)
-      icons_data_yml.map { |icon| icon[:id] === name ?  icon : nil }.compact.first
+    def icon_data(type, name)
+      icons_data_yml(type).map { |icon| icon[:id] === name ?  icon : nil }.compact.first
     end
 
     def icons_data_yml(type)
-      yml_path = File.expand_path("../config/#{type}.yml",__FILE__)
+      yml_path = File.expand_path("./config/#{type}.yml")
       YAML.load_file(yml_path)
     end
 
@@ -74,14 +77,14 @@ module AwesomeMapMarker
     end
 
     def self.font_path(type)
-      path = File.expand_path("../app/assets/font",__FILE__)
+      path = File.expand_path("./app/assets/fonts")
       case icon_type(type)
       when "far"
-        file.join(path,"fa-regular-400.ttf")
+        File.join(path,"fa-regular-400.ttf")
       when "fab"
-        file.join(path,"fa-brands-400.ttf")
+        File.join(path,"fa-brands-400.ttf")
       else  #fas
-        file.join(path,"fa-solid-900.ttf")
+        File.join(path,"fa-solid-900.ttf")
       end
     end
 
