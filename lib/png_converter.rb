@@ -1,0 +1,2 @@
+class PngConverter
+end
