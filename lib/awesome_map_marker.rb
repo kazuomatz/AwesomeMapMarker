@@ -1,53 +1,69 @@
 require 'awesome_map_marker/version'
 require 'mini_magick'
 require 'yaml'
+require 'tempfile'
 
 module AwesomeMapMarker
   class Error < StandardError; end
   # Your code goes here...
   #
-  def self.greet
-    p 'Hello'
-  end
 
-  def self.generate(size: 128,fill_color:'#000000')
+
+  def self.generate(type: :fas, name: "fa-map-marker-alt", size: 128, fill_color: "#000000")
+
+    tmp_file = Tempfile.new(%w(icon .png))
+    tmp_file.close
+    p tmp_file.path
+
     MiniMagick::Tool::Convert.new do |magick|
-      magick << File.expand_path("./app/assets/images/icon-base.png")
+      magick << File.expand_path("../../app/assets/images/icon-base.png", __FILE__)
       magick.resize("#{size}x#{size}")
       magick.fuzz '100%'
       magick.fill fill_color
       magick.opaque '#0000FF'
-      magick << "/Users/kazuo-mt/Desktop/icon.png"
+      magick << tmp_file.path
+    end
+
+    base_image = MiniMagick::Image.open(tmp_file.path)
+    font_image = FontToPng.generate(type: type, name: name, size: size * 0.6)
+
+    tmp_file.unlink
+    base_image.composite(font_image) do |composite|
+      composite.compose "over"
+      composite.gravity "center"
+      composite.geometry "+0-#{size * 0.04}"
     end
   end
 
 
-  class PingConverter
+  class FontToPng
 
-    def initialize(size: 128, fill_color:'#000000',threshold: 0.01)
-      @width = size
-      @height = size
-      @font_size = (size * 0.76).ceil
-      @char_position = { x: 0, y: (size / 12.8) * -1 }
-      @threshold = threshold
-      @fill_color = fill_color
+    def self.generate(type: :fas, name: 'map-marker',size:128, fill_color: '#FFFFFF')
       MiniMagick.logger.level = Logger::DEBUG
-    end
 
-    def generate(type, name)
-      icon_data = icon_data(type, name)
+      name.delete_prefix!("fa-")
+      icon_data = icon_data(type.to_s, name.to_s)
+      x =  0
+      y =  (size / 12.8) * -1
+
+
+      font_size = (size * 0.76).ceil
+
       if icon_data
         unicode = icon_data[:unicode]
         char = [Integer("0x#{unicode}")].pack('U*')
-        image = MiniMagick::Image.open(File.expand_path("./app/assets/images/base.png"))
+        path = font_path(icon_type(type))
+
+        image = MiniMagick::Image.open(File.expand_path("../../app/assets/images/base.png", __FILE__))
         image.combine_options do |config|
-          config.resize "#{@width}x#{@height}"
-          config.font PingConverter.font_path(type)
+          config.resize "#{size}x#{size}"
+          config.font path
           config.gravity 'center'
-          config.pointsize @font_size
+          config.pointsize font_size
           config.kerning  0
-          config.fill '#ffffff'
-          config.draw "text #{@char_position[:x]},#{@char_position[:y]} #{char}"
+          config.stroke "transparent"
+          config.fill fill_color
+          config.draw "text #{x},#{y} '#{char}'"
         end
         return image
       else
@@ -55,30 +71,32 @@ module AwesomeMapMarker
       end
     end
 
-    def icon_data(type, name)
-      icons_data_yml(type).map { |icon| icon[:id] === name ?  icon : nil }.compact.first
-    end
-
-    def icons_data_yml(type)
-      yml_path = File.expand_path("./config/#{type}.yml")
-      YAML.load_file(yml_path)
-    end
+    private
 
     def self.icon_type(type)
-      return "fas" if type.nil?
+      return :fas if type.nil?
       case type.to_s
       when "far", "regular"
-        "far"
+        :far
       when "fab", "brand"
-        "fab"
+        :fab
       else
-        "fas"
+        :fas
       end
     end
 
+    def self.icon_data(type, name)
+      icons_data_yml(icon_type(type).to_s).select { |icon| icon[:id] === name }.first
+    end
+
+    def self.icons_data_yml(type)
+      yml_path = File.expand_path("../../config/#{icon_type(type)}.yml", __FILE__)
+      YAML.load_file(yml_path)
+    end
+
     def self.font_path(type)
-      path = File.expand_path("./app/assets/fonts")
-      case icon_type(type)
+      path = File.expand_path("../../app/assets/fonts", __FILE__)
+      case icon_type(type).to_s
       when "far"
         File.join(path,"fa-regular-400.ttf")
       when "fab"
@@ -88,19 +106,7 @@ module AwesomeMapMarker
       end
     end
 
-
-
-
-    def self.blob(type)
-
-
-
-
-
-    end
-
-
-
   end
+
 
 end
