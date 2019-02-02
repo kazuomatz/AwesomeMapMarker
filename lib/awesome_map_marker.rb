@@ -5,9 +5,6 @@ require 'tempfile'
 
 module AwesomeMapMarker
   class Error < StandardError; end
-  # Your code goes here...
-  #
-
 
   def self.generate(type: :fas, name: "fa-map-marker-alt", size: 128, fill_color: "#000000")
 
@@ -36,6 +33,9 @@ module AwesomeMapMarker
   end
 
 
+  #
+  #  Convert web-font to PNG
+  #
   class FontToPng
 
     def self.generate(type: :fas, name: 'map-marker',size:128, fill_color: '#FFFFFF')
