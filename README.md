@@ -40,7 +40,7 @@ Parameter is Hash.
 
 |  parameter  |  TH  |
 | ---- | ---- |
-|  :icon_type  |  Fontawsome type. : Only ":fs" (solid) and ":fb" (brand) can be specified. ":solid", ":brand" can also be specified. Default is ":fs". |
+|  :type  |  Fontawsome type. : Only ":fs" (solid) and ":fb" (brand) can be specified. ":solid", ":brand" can also be specified. Default is ":fs". |
 |  :name  |  Fontawesome font name. such as "fa-smile-beam". Default is "fa-map-marker-alt". |
 |  :fill_color  |  Hex color string. such as "#5e4fab". Default is "#ff0000". |
 |  :size  |  Square side length. Default is 128. If you specify a value greater than 2048, it will be 2048.|
@@ -57,7 +57,7 @@ If it can not be generated, return nil.
 
 ```ruby
 image = AwesomeMapMarker.generate(
-            icon_type: :fs,
+            type: :fs,
             name: 'fa-smile-beam',
             fill_color: '#5e4fab')
 ```
@@ -69,7 +69,7 @@ image = AwesomeMapMarker.generate(
 
 ```ruby
 image = AwesomeMapMarker.generate(
-            icon_type: :fb,
+            type: :fb,
             name: 'fa-github',
             fill_color: '#000000')
 ```
@@ -80,7 +80,7 @@ image = AwesomeMapMarker.generate(
 
 ```ruby
 image = AwesomeMapMarker.generate(
-            icon_type: :fs,
+            type: :fs,
             name: 'fa-pastafarianism',
             fill_color: '#b23892',
             size:64)
