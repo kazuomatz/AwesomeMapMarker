@@ -27,7 +27,7 @@ require 'awesome_map_marker'
 image = AwesomeMapMarker.generate
 
 #image is MiniMagick::Image
-image.save('/path/to/save')
+image.write('/path/to/save')
 ```
 
 In the case of no parameter, such a marker is generated.
@@ -40,9 +40,9 @@ Parameter is Hash.
 
 |  parameter  |  TH  |
 | ---- | ---- |
-|  :type  |  Fontawsome type. : Only ":fs" (solid) and ":fb" (brand) can be specified. ":solid", ":brand" can also be specified. Default is ":fs". |
+|  :type  |  Fontawsome type. : Only ":fas" (solid) and ":fab" (brand) can be specified. ":solid", ":brand" can also be specified. Default is ":fas". |
 |  :name  |  Fontawesome font name. such as "fa-smile-beam". Default is "fa-map-marker-alt". |
-|  :fill_color  |  Hex color string. such as "#5e4fab". Default is "#ff0000". |
+|  :fill_color  |  Hex color string. such as "#ff0000". Default is - ![#1589F0](https://placehold.it/15/e45340/000000?text=+)  "#e45340". |
 |  :size  |  Square side length. Default is 128. If you specify a value greater than 2048, it will be 2048.|
 
 
@@ -56,10 +56,9 @@ If it can not be generated, return nil.
 #### Solid icon
 
 ```ruby
-image = AwesomeMapMarker.generate(
-            type: :fs,
-            name: 'fa-smile-beam',
-            fill_color: '#5e4fab')
+image = AwesomeMapMarker.generate(type: :fas,
+                                  name: 'fa-smile-beam',
+                                  fill_color: '#5e4fab')
 ```
 
 <img src="https://user-images.githubusercontent.com/2704723/52199531-bc955c80-28a9-11e9-9d60-77f562fd9e8d.png" width="128"/>
@@ -68,10 +67,9 @@ image = AwesomeMapMarker.generate(
 #### Brand icon
 
 ```ruby
-image = AwesomeMapMarker.generate(
-            type: :fb,
-            name: 'fa-github',
-            fill_color: '#000000')
+image = AwesomeMapMarker.generate(type: :fab,
+                                  name: 'fa-github',
+                                  fill_color: '#000000')
 ```
 
 <img src="https://user-images.githubusercontent.com/2704723/52200171-5a3d5b80-28ab-11e9-9958-6e5142bc8c12.png" width="128"/>
@@ -79,11 +77,10 @@ image = AwesomeMapMarker.generate(
 #### Size
 
 ```ruby
-image = AwesomeMapMarker.generate(
-            type: :fs,
-            name: 'fa-pastafarianism',
-            fill_color: '#b23892',
-            size:64)
+image = AwesomeMapMarker.generate( type: :fas,
+                                   name: 'fa-pastafarianism',
+                                   fill_color: '#b23892',
+                                   size: 64)
 ```
 <img src="https://user-images.githubusercontent.com/2704723/52200581-81485d00-28ac-11e9-97f8-7aad9e251152.png" width="64"/>
 
