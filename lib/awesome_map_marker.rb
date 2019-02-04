@@ -5,10 +5,12 @@ require 'mini_magick'
 require 'yaml'
 require 'tempfile'
 
+# ##########################################
 #  AwesomeMapMarker
 #  Version 0.1.0
+#  2019-02-04
 #  Author Kazuomatz
-
+# ##########################################
 module AwesomeMapMarker
   class Error < StandardError; end
 
