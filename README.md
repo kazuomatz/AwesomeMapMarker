@@ -96,7 +96,8 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/kazuom
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+- The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+- All font files licensed under [SIL OFL 1.1](http://scripts.sil.org/OFL)
 
 ## Code of Conduct
 
