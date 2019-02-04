@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kazuo Matsunaga"]
   spec.email         = ["getlasterror@gmail.com"]
 
-  spec.summary       = %q{Map Marker generator with Fontawesome}
-  spec.description   = %q{Simple Map Marker generator with Fontawesome}
+  spec.summary       = %q{AwesomeMapMarker is a library that generates markers from Fontawesome 5. }
+  spec.description   = %q{Generate marker for plotting on maps such as Google Map, Open Street Map and iOS App etc. }
   spec.homepage      = "https://github.com/kazuomatz"
   spec.license       = "MIT"
 
@@ -41,5 +41,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
 
   spec.add_runtime_dependency 'mini_magick', '~> 4.8'
-  spec.add_runtime_dependency 'font_awesome5_rails'
 end

@@ -6,11 +6,15 @@ require 'tempfile'
 module AwesomeMapMarker
   class Error < StandardError; end
 
-  def self.generate(type: :fas, name: "fa-map-marker-alt", size: 128, fill_color: "#000000")
+  def self.generate(type: :fas, name: "fa-map-marker-alt", size: 128, fill_color: "#e45340")
+    size = 2048 if size > 2048
+    return nil if size <= 0
+
+    font_image = FontAwesome.generate(type: type, name: name, size: size * 0.6)
+    return nil if font_image.nil?
 
     tmp_file = Tempfile.new(%w(icon .png))
     tmp_file.close
-    p tmp_file.path
 
     MiniMagick::Tool::Convert.new do |magick|
       magick << File.expand_path("../../app/assets/images/icon-base.png", __FILE__)
@@ -22,7 +26,6 @@ module AwesomeMapMarker
     end
 
     base_image = MiniMagick::Image.open(tmp_file.path)
-    font_image = FontAwesome.generate(type: type, name: name, size: size * 0.6)
 
     tmp_file.unlink
     base_image.composite(font_image) do |composite|
@@ -39,10 +42,12 @@ module AwesomeMapMarker
   class FontAwesome
 
     def self.generate(type: :fas, name: 'map-marker',size:128, fill_color: '#FFFFFF')
-      MiniMagick.logger.level = Logger::DEBUG
+      #MiniMagick.logger.level = Logger::DEBUG
 
       name.delete_prefix!("fa-")
       icon_data = icon_data(type.to_s, name.to_s)
+      return nil if icon_data.nil?
+
       x =  0
       y =  (size / 12.8) * -1
 
@@ -61,7 +66,7 @@ module AwesomeMapMarker
           config.gravity 'center'
           config.pointsize font_size
           config.kerning  0
-          config.stroke "transparent"
+          config.stroke 'transparent'
           config.fill fill_color
           config.draw "text #{x},#{y} '#{char}'"
         end
@@ -109,8 +114,5 @@ module AwesomeMapMarker
         File.join(path,"fa-solid-900.ttf")
       end
     end
-
   end
-
-
 end
