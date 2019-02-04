@@ -19,7 +19,7 @@ module AwesomeMapMarker
                     size: 128,
                     fill_color: '#e45340')
 
-    size = 2048 if size > 2048
+    size = 1024 if size > 1024
     return nil if size <= 0
 
     font_image = FontAwesome.generate(type: type, name: name, size: size * 0.6)
