@@ -2,6 +2,11 @@
 
 AwesomeMapMarker is a library that generates markers from Fontawesome 5 for plotting on maps such as Google Map, Open Street Map and iOS App etc.
 
+
+## Requirements
+- ImageMagick 6.9x
+- MiniMagick
+
 ## Installation
 
 Add this line to your application's Gemfile:
