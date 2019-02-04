@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{AwesomeMapMarker is a library that generates markers from Fontawesome 5. }
   spec.description   = %q{AwesomeMapMarker is a library that generates markers from Fontawesome 5. Generate marker for plotting on maps such as Google Map, Open Street Map and iOS App etc. }
-  spec.homepage      = "https://github.com/kazuomatz/awesome_map_marker"
+  spec.homepage      = "https://github.com/kazuomatz/AwesomeMapMarker"
   spec.license       = "MIT"
 
   # Specify which files should be added to the gem when it is released.
