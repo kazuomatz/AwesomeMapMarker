@@ -32,7 +32,7 @@ image.write('/path/to/save')
 
 In the case of no parameter, such a marker is generated.
 
-<img src="https://user-images.githubusercontent.com/2704723/52198462-47745800-28a6-11e9-96b4-5c2c9226956e.png"/>
+<img src="https://user-images.githubusercontent.com/2704723/52211823-4f47f280-28ce-11e9-985c-da6eb7a97f30.png"/>
 
 ### Parameters
 
