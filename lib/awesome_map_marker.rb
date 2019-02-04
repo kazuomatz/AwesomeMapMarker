@@ -22,7 +22,7 @@ module AwesomeMapMarker
     end
 
     base_image = MiniMagick::Image.open(tmp_file.path)
-    font_image = FontToPng.generate(type: type, name: name, size: size * 0.6)
+    font_image = FontAwesome.generate(type: type, name: name, size: size * 0.6)
 
     tmp_file.unlink
     base_image.composite(font_image) do |composite|
@@ -36,7 +36,7 @@ module AwesomeMapMarker
   #
   #  Convert web-font to PNG
   #
-  class FontToPng
+  class FontAwesome
 
     def self.generate(type: :fas, name: 'map-marker',size:128, fill_color: '#FFFFFF')
       MiniMagick.logger.level = Logger::DEBUG
@@ -71,7 +71,15 @@ module AwesomeMapMarker
       end
     end
 
+    def self.icons(type)
+      icons_data_yml(icon_type(type).to_s)
+    end
+
     private
+
+    def self.icon_data(type, name)
+      icons_data_yml(icon_type(type).to_s).select { |icon| icon[:id] === name }.first
+    end
 
     def self.icon_type(type)
       return :fas if type.nil?
@@ -83,10 +91,6 @@ module AwesomeMapMarker
       else
         :fas
       end
-    end
-
-    def self.icon_data(type, name)
-      icons_data_yml(icon_type(type).to_s).select { |icon| icon[:id] === name }.first
     end
 
     def self.icons_data_yml(type)
