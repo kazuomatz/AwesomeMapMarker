@@ -48,7 +48,7 @@ Parameter is Hash.
 |  :type  |  Fontawsome type. : Only ":fas" (solid) and ":fab" (brand) can be specified. ":solid", ":brand" can also be specified. Default is ":fas". |
 |  :name  |  Fontawesome font name. such as "fa-smile-beam". Default is "fa-map-marker-alt". |
 |  :fill_color  |  Hex color string. such as "#ff0000". Default is - ![#1589F0](https://placehold.it/15/e45340/000000?text=+)  "#e45340". |
-|  :size  |  Square side length. Default is 128. If you specify a value greater than 2048, it will be 2048.|
+|  :size  |  Square side length. Default is 128. If you specify a value greater than 1024, it will be 1024.|
 
 
 ### Return value
