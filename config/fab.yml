@@ -15,6 +15,8 @@
   :unicode: f36a
 - :id: affiliatetheme
   :unicode: f36b
+- :id: airbnb
+  :unicode: f834
 - :id: algolia
   :unicode: f36c
 - :id: alipay
@@ -61,6 +63,8 @@
   :unicode: f375
 - :id: bandcamp
   :unicode: f2d5
+- :id: battle-net
+  :unicode: f835
 - :id: behance
   :unicode: f1b4
 - :id: behance-square
@@ -85,10 +89,16 @@
   :unicode: f293
 - :id: bluetooth-b
   :unicode: f294
+- :id: bootstrap
+  :unicode: f836
 - :id: btc
   :unicode: f15a
+- :id: buffer
+  :unicode: f837
 - :id: buromobelexperte
   :unicode: f37f
+- :id: buy-n-large
+  :unicode: f8a6
 - :id: buysellads
   :unicode: f20d
 - :id: canadian-maple-leaf
@@ -119,6 +129,8 @@
   :unicode: f789
 - :id: chrome
   :unicode: f268
+- :id: chromecast
+  :unicode: f838
 - :id: cloudscale
   :unicode: f383
 - :id: cloudsmith
@@ -135,6 +147,8 @@
   :unicode: f20e
 - :id: contao
   :unicode: f26d
+- :id: cotton-bureau
+  :unicode: f89e
 - :id: cpanel
   :unicode: f388
 - :id: creative-commons
@@ -177,6 +191,8 @@
   :unicode: f38d
 - :id: d-and-d-beyond
   :unicode: f6ca
+- :id: dailymotion
+  :unicode: f952
 - :id: dashcube
   :unicode: f210
 - :id: delicious
@@ -239,6 +255,8 @@
   :unicode: f42e
 - :id: etsy
   :unicode: f2d7
+- :id: evernote
+  :unicode: f839
 - :id: expeditedssl
   :unicode: f23e
 - :id: facebook
@@ -259,6 +277,8 @@
   :unicode: f799
 - :id: firefox
   :unicode: f269
+- :id: firefox-browser
+  :unicode: f907
 - :id: first-order
   :unicode: f2b0
 - :id: first-order-alt
@@ -307,6 +327,8 @@
   :unicode: f261
 - :id: git
   :unicode: f1d3
+- :id: git-alt
+  :unicode: f841
 - :id: git-square
   :unicode: f1d2
 - :id: github
@@ -377,10 +399,14 @@
   :unicode: f13b
 - :id: hubspot
   :unicode: f3b2
+- :id: ideal
+  :unicode: f913
 - :id: imdb
   :unicode: f2d8
 - :id: instagram
   :unicode: f16d
+- :id: instagram-square
+  :unicode: f955
 - :id: intercom
   :unicode: f7af
 - :id: internet-explorer
@@ -389,6 +415,8 @@
   :unicode: f7b0
 - :id: ioxhost
   :unicode: f208
+- :id: itch-io
+  :unicode: f83a
 - :id: itunes
   :unicode: f3b4
 - :id: itunes-note
@@ -457,6 +485,8 @@
   :unicode: f4f6
 - :id: maxcdn
   :unicode: f136
+- :id: mdb
+  :unicode: f8ca
 - :id: medapps
   :unicode: f3c6
 - :id: medium
@@ -471,12 +501,16 @@
   :unicode: f5a3
 - :id: mendeley
   :unicode: f7b3
+- :id: microblog
+  :unicode: f91a
 - :id: microsoft
   :unicode: f3ca
 - :id: mix
   :unicode: f3cb
 - :id: mixcloud
   :unicode: f289
+- :id: mixer
+  :unicode: f956
 - :id: mizuni
   :unicode: f3cc
 - :id: modx
@@ -489,8 +523,6 @@
   :unicode: f612
 - :id: nimblr
   :unicode: f5a8
-- :id: nintendo-switch
-  :unicode: f418
 - :id: node
   :unicode: f419
 - :id: node-js
@@ -515,6 +547,8 @@
   :unicode: f26a
 - :id: optin-monster
   :unicode: f23c
+- :id: orcid
+  :unicode: f8d2
 - :id: osi
   :unicode: f41a
 - :id: page4
@@ -547,6 +581,8 @@
   :unicode: f4e5
 - :id: pied-piper-pp
   :unicode: f1a7
+- :id: pied-piper-square
+  :unicode: f91e
 - :id: pinterest
   :unicode: f0d2
 - :id: pinterest-p
@@ -607,6 +643,8 @@
   :unicode: f3e9
 - :id: safari
   :unicode: f267
+- :id: salesforce
+  :unicode: f83b
 - :id: sass
   :unicode: f41e
 - :id: schlix
@@ -623,6 +661,8 @@
   :unicode: f3ec
 - :id: shirtsinbulk
   :unicode: f214
+- :id: shopify
+  :unicode: f957
 - :id: shopware
   :unicode: f5b5
 - :id: simplybuilt
@@ -655,6 +695,8 @@
   :unicode: f7d3
 - :id: speakap
   :unicode: f3f3
+- :id: speaker-deck
+  :unicode: f83c
 - :id: spotify
   :unicode: f1bc
 - :id: squarespace
@@ -663,6 +705,8 @@
   :unicode: f18d
 - :id: stack-overflow
   :unicode: f16c
+- :id: stackpath
+  :unicode: f842
 - :id: staylinked
   :unicode: f3f5
 - :id: steam
@@ -691,6 +735,10 @@
   :unicode: f3f9
 - :id: suse
   :unicode: f7d6
+- :id: swift
+  :unicode: f8e1
+- :id: symfony
+  :unicode: f83d
 - :id: teamspeak
   :unicode: f4f9
 - :id: telegram
@@ -731,8 +779,12 @@
   :unicode: f7df
 - :id: uikit
   :unicode: f403
+- :id: umbraco
+  :unicode: f8e8
 - :id: uniregistry
   :unicode: f404
+- :id: unity
+  :unicode: f949
 - :id: untappd
   :unicode: f405
 - :id: ups
@@ -767,6 +819,8 @@
   :unicode: f40b
 - :id: vuejs
   :unicode: f41f
+- :id: waze
+  :unicode: f83f
 - :id: weebly
   :unicode: f5cc
 - :id: weibo
@@ -811,6 +865,8 @@
   :unicode: f23b
 - :id: yahoo
   :unicode: f19e
+- :id: yammer
+  :unicode: f840
 - :id: yandex
   :unicode: f413
 - :id: yandex-international

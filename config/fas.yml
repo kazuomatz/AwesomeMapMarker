@@ -105,8 +105,14 @@
   :unicode: f04a
 - :id: bacon
   :unicode: f7e5
+- :id: bahai
+  :unicode: f666
 - :id: balance-scale
   :unicode: f24e
+- :id: balance-scale-left
+  :unicode: f515
+- :id: balance-scale-right
+  :unicode: f516
 - :id: ban
   :unicode: f05e
 - :id: band-aid
@@ -145,6 +151,8 @@
   :unicode: f647
 - :id: bicycle
   :unicode: f206
+- :id: biking
+  :unicode: f84a
 - :id: binoculars
   :unicode: f1e5
 - :id: biohazard
@@ -181,6 +189,12 @@
   :unicode: f5da
 - :id: bookmark
   :unicode: f02e
+- :id: border-all
+  :unicode: f84c
+- :id: border-none
+  :unicode: f850
+- :id: border-style
+  :unicode: f853
 - :id: bowling-ball
   :unicode: f436
 - :id: box
@@ -261,6 +275,8 @@
   :unicode: f5e1
 - :id: car-side
   :unicode: f5e4
+- :id: caravan
+  :unicode: f8ff
 - :id: caret-down
   :unicode: f0d7
 - :id: caret-left
@@ -429,6 +445,8 @@
   :unicode: f14e
 - :id: compress
   :unicode: f066
+- :id: compress-alt
+  :unicode: f422
 - :id: compress-arrows-alt
   :unicode: f78c
 - :id: concierge-bell
@@ -581,6 +599,8 @@
   :unicode: f071
 - :id: expand
   :unicode: f065
+- :id: expand-alt
+  :unicode: f424
 - :id: expand-arrows-alt
   :unicode: f31e
 - :id: external-link-alt
@@ -593,6 +613,8 @@
   :unicode: f1fb
 - :id: eye-slash
   :unicode: f070
+- :id: fan
+  :unicode: f863
 - :id: fast-backward
   :unicode: f049
 - :id: fast-forward
@@ -843,10 +865,12 @@
   :unicode: f807
 - :id: hashtag
   :unicode: f292
+- :id: hat-cowboy
+  :unicode: f8c0
+- :id: hat-cowboy-side
+  :unicode: f8c1
 - :id: hat-wizard
   :unicode: f6e8
-- :id: haykal
-  :unicode: f666
 - :id: hdd
   :unicode: f0a0
 - :id: heading
@@ -913,6 +937,8 @@
   :unicode: f810
 - :id: icicles
   :unicode: f7ad
+- :id: icons
+  :unicode: f86d
 - :id: id-badge
   :unicode: f2c1
 - :id: id-card
@@ -1129,6 +1155,8 @@
   :unicode: f21c
 - :id: mountain
   :unicode: f6fc
+- :id: mouse
+  :unicode: f8cc
 - :id: mouse-pointer
   :unicode: f245
 - :id: mug-hot
@@ -1217,12 +1245,18 @@
   :unicode: f756
 - :id: phone
   :unicode: f095
+- :id: phone-alt
+  :unicode: f879
 - :id: phone-slash
   :unicode: f3dd
 - :id: phone-square
   :unicode: f098
+- :id: phone-square-alt
+  :unicode: f87b
 - :id: phone-volume
   :unicode: f2a0
+- :id: photo-video
+  :unicode: f87c
 - :id: piggy-bank
   :unicode: f4d3
 - :id: pills
@@ -1309,6 +1343,8 @@
   :unicode: f074
 - :id: receipt
   :unicode: f543
+- :id: record-vinyl
+  :unicode: f8d9
 - :id: recycle
   :unicode: f1b8
 - :id: redo
@@ -1317,6 +1353,8 @@
   :unicode: f2f9
 - :id: registered
   :unicode: f25d
+- :id: remove-format
+  :unicode: f87d
 - :id: reply
   :unicode: f3e5
 - :id: reply-all
@@ -1481,24 +1519,38 @@
   :unicode: f0dc
 - :id: sort-alpha-down
   :unicode: f15d
+- :id: sort-alpha-down-alt
+  :unicode: f881
 - :id: sort-alpha-up
   :unicode: f15e
+- :id: sort-alpha-up-alt
+  :unicode: f882
 - :id: sort-amount-down
   :unicode: f160
+- :id: sort-amount-down-alt
+  :unicode: f884
 - :id: sort-amount-up
   :unicode: f161
+- :id: sort-amount-up-alt
+  :unicode: f885
 - :id: sort-down
   :unicode: f0dd
 - :id: sort-numeric-down
   :unicode: f162
+- :id: sort-numeric-down-alt
+  :unicode: f886
 - :id: sort-numeric-up
   :unicode: f163
+- :id: sort-numeric-up-alt
+  :unicode: f887
 - :id: sort-up
   :unicode: f0de
 - :id: spa
   :unicode: f5bb
 - :id: space-shuttle
   :unicode: f197
+- :id: spell-check
+  :unicode: f891
 - :id: spider
   :unicode: f717
 - :id: spinner
@@ -1681,6 +1733,8 @@
   :unicode: f25c
 - :id: traffic-light
   :unicode: f637
+- :id: trailer
+  :unicode: f941
 - :id: train
   :unicode: f238
 - :id: tram
@@ -1813,6 +1867,8 @@
   :unicode: f4e2
 - :id: vihara
   :unicode: f6a7
+- :id: voicemail
+  :unicode: f897
 - :id: volleyball-ball
   :unicode: f45f
 - :id: volume-down
@@ -1835,6 +1891,8 @@
   :unicode: f494
 - :id: water
   :unicode: f773
+- :id: wave-square
+  :unicode: f83e
 - :id: weight
   :unicode: f496
 - :id: weight-hanging
