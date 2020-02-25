@@ -43,7 +43,7 @@ In the case of no parameter, such a marker is generated.
 
 Parameter is Hash.
 
-|  parameter  |  TH  |
+|  parameter  |  note  |
 | ---- | ---- |
 |  :type  |  Fontawsome type. : Only ":fas" (solid) and ":fab" (brand) can be specified. ":solid", ":brand" can also be specified. Default is ":fas". |
 |  :name  |  Fontawesome font name. such as "fa-smile-beam". Default is "fa-map-marker-alt". |
