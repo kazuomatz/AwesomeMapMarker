@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.name          = "awesome_map_marker"
   spec.version       = AwesomeMapMarker::VERSION
   spec.authors       = ["Kazuo Matsunaga"]
-  spec.email         = ["getlasterror@gmail.com"]
+  spec.email         = ["kazuomatz@lifecode.jp"]
 
   spec.summary       = %q{AwesomeMapMarker is a library that generates markers from Fontawesome 5. }
   spec.description   = %q{AwesomeMapMarker is a library that generates markers from Fontawesome 5. Generate marker for plotting on maps such as Google Map, Open Street Map and iOS App etc. }

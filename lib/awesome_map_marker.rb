@@ -64,7 +64,7 @@ module AwesomeMapMarker
         return nil if icon_data.nil?
 
         x =  0
-        y =  (size / 12.8) * -1
+        y = 1
 
         font_size = (size * 0.76).ceil
 
